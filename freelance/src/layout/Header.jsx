@@ -55,8 +55,6 @@ const Header = () => {
       <nav
         className="bg-white border-gray-200 dark:bg-gray-900"
         style={{
-          position: 'fixed',
-          zIndex: '9999',
           width: '100%',
           boxShadow: '2px 0 5px rgba(0,0,0,0.5)',
         }}

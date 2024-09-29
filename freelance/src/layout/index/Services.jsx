@@ -19,7 +19,7 @@ const Services = () => {
       >
         {translate('service') || 'Services'} {/* Fallback to 'Services' if translation is missing */}
       </h1>
-      <div style={{ justifyContent: 'center', alignItems: 'center', padding: '5rem', paddingTop: '1rem', display: 'flex' }}>
+      <div style={{ justifyContent: 'center', alignItems: 'center', padding: '3rem', paddingTop: '1rem', display: 'flex' }}>
         <ul className="grid gap-40 sm:grid-cols-2 lg:grid-cols-2 p-2 xl:p-5" style={{ width: 'auto' }}>
           {/* Service Item 1 */}
           <li>

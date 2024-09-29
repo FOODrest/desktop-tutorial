@@ -61,7 +61,7 @@ const Header = () => {
           boxShadow: '2px 0 5px rgba(0,0,0,0.5)',
         }}
       >
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-center sm:justify-between mx-auto p-4">
           <a
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse sm:mb-0 max-w-[24rem] mb-3"
@@ -83,7 +83,7 @@ const Header = () => {
               href="https://wa.me/212669150042"
               target="_blank"
               type="button"
-              className="text-white bg-green-600 hover:bg-green-800 rounded-lg px-4 py-2 flex gap-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="text-white mb-6 md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-4 py-2 flex gap-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <i className="fab fa-whatsapp" style={{ fontSize: '25px' }}></i>
               <b>

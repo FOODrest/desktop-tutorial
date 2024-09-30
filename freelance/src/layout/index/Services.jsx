@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLanguage } from '../../LanguageContext';
-import PropTypes from 'prop-types';
 
 const Services = () => {
   const { translate } = useLanguage();
@@ -19,7 +18,7 @@ const Services = () => {
       >
         {translate('service') || 'Services'} {/* Fallback to 'Services' if translation is missing */}
       </h1>
-      <div className='p-16 sm:p-12 ' style={{ justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', display: 'flex' }}>
+      <div className='p-12 sm:p-8 ' style={{ justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', display: 'flex' }}>
         <ul className="grid gap-20 sm:gap-40 sm:grid-cols-2 lg:grid-cols-2 p-2 xl:p-5" style={{ width: 'auto' }}>
           {/* Service Item 1 */}
           <li>
@@ -32,12 +31,12 @@ const Services = () => {
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   {translate('Pawsome') || 'Pawsome'} {/* Fallback text */}
                 </p>
-                <p className="mb-8">
+                <p className="sm:mb-8 mb-2">
                   <b className="text-lime-500 text-2xl">30mad/kg</b>
                 </p>
                 <div style={{ width: '100%', justifyContent: 'center', textAlign: 'center', display: 'flex' }}>
                   <a href="https://wa.me/212669150042"
-                    className="flex flex-row items-center w-36 justify-center py-2 mb-4 text-sm font-bold bg-green-300 leading-6 capitalize duration-100 transform rounded-sm shadow cursor-pointer focus:ring-4 focus:ring-green-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:mr-4 md:pl-8 md:pr-6 hover:shadow-lg hover:-translate-y-1">
+                    className="flex flex-row items-center w-36 justify-center py-2  text-sm font-bold bg-green-300 leading-6 capitalize duration-100 transform rounded-sm shadow cursor-pointer focus:ring-4 focus:ring-green-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:mr-4 md:pl-8 md:pr-6 hover:shadow-lg hover:-translate-y-1">
                     {translate('Order') || 'Order'} {/* Fallback text */}
                   </a>
                 </div>
@@ -55,12 +54,12 @@ const Services = () => {
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   {translate('Walking') || 'Walking'} {/* Fallback text */}
                 </p>
-                <p className='mb-8'>
+                <p className='sm:mb-8 mb-2'>
                   <b className='text-lime-500 text-2xl'>80Mad/h</b>
                 </p>
                 <div style={{ width: '100%', justifyContent: 'center', textAlign: 'center', display: 'flex' }}>
                   <a href="https://wa.me/212669150042"
-                    className="flex flex-row items-center w-36 justify-center py-2 mb-4 text-sm font-bold bg-green-300 leading-6 capitalize duration-100 transform rounded-sm shadow cursor-pointer focus:ring-4 focus:ring-green-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:mr-4 md:pl-8 md:pr-6 hover:shadow-lg hover:-translate-y-1">
+                    className="flex flex-row items-center w-36 justify-center py-2  text-sm font-bold bg-green-300 leading-6 capitalize duration-100 transform rounded-sm shadow cursor-pointer focus:ring-4 focus:ring-green-500 focus:ring-opacity-50 focus:outline-none sm:mb-0 sm:mr-4 md:pl-8 md:pr-6 hover:shadow-lg hover:-translate-y-1">
                     {translate('Order') || 'Order'} {/* Fallback text */}
                   </a>
                 </div>

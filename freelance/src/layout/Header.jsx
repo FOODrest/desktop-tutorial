@@ -84,14 +84,14 @@ const Header = () => {
               href="https://wa.me/212669150042"
               target="_blank"
               type="button"
-              className="text-white md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 items-center flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="text-white max-w-max md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 items-center flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <i className="fab fa-whatsapp" style={{ fontSize: '20px' }}></i>
              WhatsApp
             </a>
 
             {/* Language Dropdown */}
-            <div className="relative" style={{ padding:'0 10px' }}>
+            <div className="relative max-w-max " style={{ padding:'0 10px' }}>
             <button onClick={handleDropdownToggle} className="flex items-center text-gray-700 dark:text-gray-300">
               <LanguageIcon />
               <span>{language === 'en' ? 'English' : 'Français'}</span>

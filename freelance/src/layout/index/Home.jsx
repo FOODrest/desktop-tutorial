@@ -10,8 +10,8 @@ const Home = () => {
       <section className="bg-white dark:bg-gray-900" style={{ border:'none' }}>
         <main  style={{ border:'none' }}>
         <section className="relative bg-[rgb(155,149,89)]  text-white overflow-hidden py-20 md:py-[170px]" style={{ height:'auto', border:'none'}}>
-            <div className="absolute  bg-[rgb(155,149,89)] "></div>
-            <div className="hidden sm:block absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('../../../assets/image-100.png')",backgroundPosition:"center",backgroundAttachment:'local',backgroundRepeat:'no-repeat',backgroundSize:'cover'}}></div>
+            <div className="absolute inset-0 bg-cover bg-center   "style={{backgroundImage: "url('../../../assets/hero3.jfif')",backgroundPosition:"center",backgroundAttachment:'local',backgroundRepeat:'no-repeat',backgroundSize:'cover'}}></div>
+            <div className="absolute w-full h-full inset-0 bg-cover bg-center bg-[rgb(0,0,0,0.3)]"></div>
             
             <div className="container mx-auto px-4 py-5 md:py-40 relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between" >

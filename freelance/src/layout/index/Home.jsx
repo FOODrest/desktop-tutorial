@@ -65,7 +65,7 @@ const Home = () => {
     </main>
       </section>
     <section className="py-12" id="About-Us"  style={{ border:'none' }} >
-    <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto py-16 md:px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div className="max-w-lg">
                 <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
@@ -75,8 +75,8 @@ const Home = () => {
     {translate('aboutus')}
                 </p>
             </div>
-            <div className="mt-12 md:mt-0">
-                <img src="../assets/image_648.JPG" alt="About Us Image" className="object-cover rounded-lg" style={{ boxShadow:'0 0 10px rgba(0,0,0,0.3)' }}/>
+            <div className=" sm:px-0 px-5 mt-12 md:mt-0 ">
+                <img src="../assets/image_74.jpeg" alt="About Us Image" className="object-cover rounded-lg" style={{ boxShadow:'0 0 10px rgba(0,0,0,0.3)' }}/>
             </div>
         </div>
     </div>

@@ -79,7 +79,7 @@ const Header = () => {
             />
           </a>
 
-          <div className="block md:flex md:flex-wrap items-center md:order-2 space-x-1 space-y-1 md:space-y-0 md:space-x-1 rtl:space-x-reverse">
+          <div className="block w-full justify-start sm:justify-center  sm:max-w-max md:flex md:flex-wrap items-center md:order-2 space-x-1 space-y-1 md:space-y-0 md:space-x-1 rtl:space-x-reverse">
             <a
               href="https://wa.me/212669150042"
               target="_blank"

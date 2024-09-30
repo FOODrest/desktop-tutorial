@@ -19,12 +19,12 @@ const Services = () => {
       >
         {translate('service') || 'Services'} {/* Fallback to 'Services' if translation is missing */}
       </h1>
-      <div style={{ justifyContent: 'center', alignItems: 'center', padding: '3rem', paddingTop: '1rem', display: 'flex' }}>
-        <ul className="grid gap-40 sm:grid-cols-2 lg:grid-cols-2 p-2 xl:p-5" style={{ width: 'auto' }}>
+      <div className='p-16 sm:p-12 ' style={{ justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', display: 'flex' }}>
+        <ul className="grid gap-20 sm:gap-40 sm:grid-cols-2 lg:grid-cols-2 p-2 xl:p-5" style={{ width: 'auto' }}>
           {/* Service Item 1 */}
           <li>
-            <div className="max-w-sm bg-white rounded-lg dark:bg-gray-800 dark:border-gray-700" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.5)' }}>
-              <div style={{ width: '100%', height: '350px', overflow: 'hidden', position: 'relative' }}>
+            <div className="max-w-sm bg-white  rounded-lg dark:bg-gray-800 dark:border-gray-700" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.5)' }}>
+              <div className='h-[16rem] md:h-[21.875rem]' style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
                 <img className="rounded-t-lg object-bottom" src="../assets/image_7.JPG" alt="" style={{ bottom: '0', position: 'absolute', height: 'auto', width: '100%', objectFit: 'cover' }} />
               </div>
               <div className="p-5">
@@ -47,7 +47,7 @@ const Services = () => {
           {/* Service Item 2 */}
           <li>
             <div className="max-w-sm bg-white rounded-lg dark:bg-gray-800 dark:border-gray-700" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.5)' }}>
-              <div style={{ width: '100%', height: '350px', overflow: 'hidden' }}>
+            <div className='h-[16rem] md:h-[21.875rem]' style={{ width: '100%', overflow: 'hidden' }}>
                 <img className="rounded-t-lg" src="../assets/image_10.JPG" alt="" style={{ height: 'auto', width: '100%', objectFit: 'cover', objectPosition: 'center' }} />
               </div>
               <div className="p-5">

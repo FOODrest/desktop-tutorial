@@ -91,7 +91,7 @@ const Header = () => {
             </a>
 
             {/* Language Dropdown */}
-            <div className="relative max-w-max " style={{ padding:'0 10px' }}>
+            <div className="relative max-w-max py-2 sm:py-0 sm:px-3">
             <button onClick={handleDropdownToggle} className="flex px-4 py-2 items-center text-gray-700 dark:text-gray-300" style={{ boxShadow:'0 0 5px rgba(0,0,0,0.3)' }}>
               <LanguageIcon />
               <span>{language === 'en' ? 'English' : 'Français'}</span>

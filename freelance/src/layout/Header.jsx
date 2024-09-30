@@ -84,7 +84,7 @@ const Header = () => {
               href="https://wa.me/212669150042"
               target="_blank"
               type="button"
-              className="text-white max-w-max md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 items-center flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="text-white max-w-max md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-4 py-1 items-center flex gap-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <i className="fab fa-whatsapp" style={{ fontSize: '20px' }}></i>
              WhatsApp
@@ -92,13 +92,13 @@ const Header = () => {
 
             {/* Language Dropdown */}
             <div className="relative max-w-max " style={{ padding:'0 10px' }}>
-            <button onClick={handleDropdownToggle} className="flex items-center text-gray-700 dark:text-gray-300">
+            <button onClick={handleDropdownToggle} className="flex px-4 py-2 items-center text-gray-700 dark:text-gray-300" style={{ boxShadow:'0 0 5px rgba(0,0,0,0.3)' }}>
               <LanguageIcon />
               <span>{language === 'en' ? 'English' : 'Français'}</span>
             </button>
 
               {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 bg-white dark:bg-gray-700 rounded-lg shadow-lg z-50">
+                <div className="absolute right-0 mt-2 bg-white dark:bg-gray-700 rounded-lg  z-50" style={{ boxShadow:'0 0 5px rgba(0,0,0,0.3)' }}>
                   <button
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"

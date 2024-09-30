@@ -9,7 +9,7 @@ const Home = () => {
     <div id="home">
       <section className="bg-white dark:bg-gray-900" style={{ border:'none' }}>
         <main  style={{ border:'none' }}>
-        <section className="relative  text-white overflow-hidden py-20 md:py-[170px]" style={{ height:'auto', border:'none'}}>
+        <section className="relative bg-[#BABD8D]  text-white overflow-hidden py-20 md:py-[170px]" style={{ height:'auto', border:'none'}}>
             <div className="absolute  bg-[#BABD8D] "></div>
             <div className="hidden sm:block absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('../../../assets/image-100.png')",backgroundPosition:"center",backgroundAttachment:'local',backgroundRepeat:'no-repeat',backgroundSize:'cover'}}></div>
             

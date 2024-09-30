@@ -87,7 +87,7 @@ const Header = () => {
               className="text-white md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 items-center flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <i className="fab fa-whatsapp" style={{ fontSize: '20px' }}></i>
-              {translate('contactUS')}
+             WhatsApp
             </a>
 
             {/* Language Dropdown */}

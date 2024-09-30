@@ -56,6 +56,10 @@ const Header = () => {
         className="bg-white border-gray-200 dark:bg-gray-900"
         style={{
           width: '100%',
+          position:'absolute',
+          top:'0',
+          left:'0',
+          zIndex:'99999',
           boxShadow: '2px 0 5px rgba(0,0,0,0.5)',
         }}
       >
@@ -76,12 +80,12 @@ const Header = () => {
             />
           </a>
 
-          <div className="flex flex-wrap items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+          <div className="flex flex-wrap items-center md:order-2 space-x-1 space-y-1 md:space-y-0 md:space-x-1 rtl:space-x-reverse">
             <a
               href="https://wa.me/212669150042"
               target="_blank"
               type="button"
-              className="text-white mb-6 md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="text-white md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 items-center flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <i className="fab fa-whatsapp" style={{ fontSize: '20px' }}></i>
               {translate('contactUS')}

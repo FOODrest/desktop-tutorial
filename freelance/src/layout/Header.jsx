@@ -67,8 +67,8 @@ const Header = () => {
             <img
               src="../assets/logo_huggingtails.png"
               alt=""
+              className='h-20'
               style={{
-                height: '50px',
                 width: 'auto',
                 borderRadius: '50%',
                 boxShadow: '0 0 5px rgba(0,0,0,0.5)',
@@ -81,11 +81,10 @@ const Header = () => {
               href="https://wa.me/212669150042"
               target="_blank"
               type="button"
-              className="text-white mb-6 md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-4 py-2 flex gap-5 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="text-white mb-6 md:mb-0 bg-green-600 hover:bg-green-800 rounded-lg px-2 py-1 flex gap-4 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
-              <i className="fab fa-whatsapp" style={{ fontSize: '25px' }}></i>
-              <b>
-              {translate('contactUS')}</b>
+              <i className="fab fa-whatsapp" style={{ fontSize: '20px' }}></i>
+              {translate('contactUS')}
             </a>
 
             {/* Language Dropdown */}

@@ -53,10 +53,9 @@ const Header = () => {
   return (
     <>
       <nav
-        className="bg-white border-gray-200 dark:bg-gray-900"
+        className="bg-white border-gray-200 dark:bg-gray-900 md:absolute"
         style={{
           width: '100%',
-          position:'absolute',
           top:'0',
           left:'0',
           zIndex:'99999',

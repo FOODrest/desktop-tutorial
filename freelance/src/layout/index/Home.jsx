@@ -9,8 +9,8 @@ const Home = () => {
     <div id="home">
       <section className="bg-white dark:bg-gray-900" style={{ border:'none' }}>
         <main  style={{ border:'none' }}>
-        <section className="relative bg-gradient-to-br from-blue-900 to-indigo-800 text-white overflow-hidden py-20 md:py-[170px]" style={{ height:'auto', border:'none'}}>
-            <div className="absolute inset-0 bg-amber-200 "></div>
+        <section className="relative  text-white overflow-hidden py-20 md:py-[170px]" style={{ height:'auto', border:'none'}}>
+            <div className="absolute  bg-[#BABD8D] "></div>
             <div className="hidden sm:block absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('../../../assets/image-100.png')",backgroundPosition:"center",backgroundAttachment:'local',backgroundRepeat:'no-repeat',backgroundSize:'cover'}}></div>
             
             <div className="container mx-auto px-4 py-5 md:py-40 relative z-10">

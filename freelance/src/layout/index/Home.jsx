@@ -75,8 +75,8 @@ const Home = () => {
     {translate('aboutus')}
                 </p>
             </div>
-            <div className="px-5 sm:px-0 mt-12 md:mt-0 ">
-                <img src="../assets/image_74.jpeg" alt="About Us Image" className=" max-h-24 md:max-h-32 object-cover rounded-lg" style={{ boxShadow:'0 0 10px rgba(0,0,0,0.3)',width:'auto' }}/>
+            <div className="mt-12 md:mt-0 ">
+                <img src="../assets/image_74.jpeg" alt="About Us Image" className=" w-28 md:w-32 object-cover rounded-lg" style={{ boxShadow:'0 0 10px rgba(0,0,0,0.3)',height:'auto' }}/>
             </div>
         </div>
     </div>

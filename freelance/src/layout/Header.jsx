@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <>
       <nav
-        className="bg-white border-gray-200 dark:bg-gray-900 md:absolute"
+        className="bg-white border-gray-200 dark:bg-gray-900 relative md:absolute"
         style={{
           width: '100%',
           top:'0',
@@ -70,7 +70,7 @@ const Header = () => {
             <img
               src="../assets/logo_huggingtails.png"
               alt=""
-              className='h-20'
+              className='h-28 sm:h-20'
               style={{
                 width: 'auto',
                 borderRadius: '50%',

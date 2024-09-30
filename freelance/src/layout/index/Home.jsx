@@ -13,7 +13,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('../../../assets/image-100.png')",backgroundPosition:"center",backgroundAttachment:'local',backgroundRepeat:'no-repeat',backgroundSize:'cover'}}></div>
             
-            <div className="container mx-auto px-4 py-24 md:py-40 relative z-10">
+            <div className="container mx-auto px-4 py-5 md:py-40 relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between" >
                     <div className="w-full md:w-1/2 mb-12 md:mb-0">
                         <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight" style={{ color:'rgba(255,255,255,0.9' }}>

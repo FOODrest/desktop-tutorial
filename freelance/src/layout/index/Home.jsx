@@ -33,7 +33,7 @@ const Home = () => {
         setStatus("Message sent successfully! we'll contact you in 48h at max.");
         setFormData({ email: '', phoneNumber: '', message: '' });
       } else {
-        throw new Error('Failed to send message');
+        throw new Error('Failed to send message , please contact our team on huggingtails.1@gmail.com');
       }
     } catch (error) {
       console.error('Error sending email:', error);

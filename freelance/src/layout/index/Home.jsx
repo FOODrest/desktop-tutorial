@@ -24,13 +24,13 @@ const Home = () => {
   
     try {
       const response = await axios.post('http://localhost:3000/send-email', {
-        to: formData.email,
+        to: 'ahmedcherkaouisellami@gmail.com',
         subject: 'New Contact Form Submission',
-        body: `Phone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,
+        body: `Email: ${formData.email} \n\nPhone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,
       });
   
       if (response.status === 200) {
-        setStatus('Message sent successfully!');
+        setStatus("Message sent successfully! we'll contact you in 48h at max.");
         setFormData({ email: '', phoneNumber: '', message: '' });
       } else {
         throw new Error('Failed to send message');

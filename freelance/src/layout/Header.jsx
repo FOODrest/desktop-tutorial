@@ -20,7 +20,10 @@ const Header = () => {
     setLanguage(lang);
     setIsDropdownOpen(false);
   };
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode === 'true'; // Parse to boolean
+  });
 
   useEffect(() => {
     if (darkMode) {
@@ -28,6 +31,7 @@ const Header = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
   const toggleDarkMode = () => {

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { useLanguage } from '../LanguageContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +20,19 @@ const Header = () => {
     setLanguage(lang);
     setIsDropdownOpen(false);
   };
+  const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   const LanguageIcon = () => {
     if (language === 'en') {
       return (
@@ -89,13 +103,14 @@ const Header = () => {
               <i className="fab fa-whatsapp" style={{ fontSize: '20px' }}></i>
              WhatsApp
             </a>
-
+              
             {/* Language Dropdown */}
             <div className="relative max-w-max py-2 sm:py-0 sm:px-3">
             <button onClick={handleDropdownToggle} className="flex px-4 py-2 items-center text-gray-700 dark:text-gray-300" style={{ boxShadow:'0 0 5px rgba(0,0,0,0.3)' }}>
               <LanguageIcon />
               <span>{language === 'en' ? 'English' : 'Français'}</span>
             </button>
+            
 
               {isDropdownOpen && (
                 <div className="absolute right-0 mt-2 bg-white dark:bg-gray-700 rounded-lg  z-50" style={{ boxShadow:'0 0 5px rgba(0,0,0,0.3)' }}>
@@ -134,7 +149,17 @@ const Header = () => {
                 </div>
               )}
             </div>
-
+            <div className="pb-2 md:pb-0">
+            <button
+              onClick={toggleDarkMode}
+              className={`px-4 py-2 rounded-full focus:outline-none transition duration-300 ${
+                darkMode ? 'bg-gray-100 text-yellow-400 hover:bg-gray-200' : 'bg-gray-800 text-gray-100 hover:bg-gray-900'
+              }`}
+            >
+              {/* Display the sun icon for light mode, moon icon for dark mode */}
+              <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
+            </button>
+            </div>
             <button
               type="button"
               className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

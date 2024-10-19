@@ -38,7 +38,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Error sending email:', error);
-      setStatus(error.response?.data?.message || 'An error occurred. Please try again later.');
+      setStatus(error.response || 'An error occurred. Please try again later.');
     }
   };
   

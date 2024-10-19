@@ -5,13 +5,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-
 // Middleware
 app.use(cors({
   origin: '*', // Be more specific in production
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 
@@ -83,8 +83,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
-
-app.use(cors({
-  origin: '*', // Replace with your frontend's URL
-  credentials: true
-}));

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from 'axios';
 import { useLanguage } from '../../LanguageContext';
 const Home = () => {
+  const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api";
   const {  translate} = useLanguage(); 
   const [formData, setFormData] = useState({
     email: '',
@@ -23,7 +24,8 @@ const Home = () => {
     setStatus('Sending...');
   
     try {
-      const response = await axios.post('http://localhost:3000/send-email', {
+      console.log('sende')
+      const response = await axios.post(`${API_URL}/send-email`, {
         to: 'ahmedcherkaouisellami@gmail.com',
         subject: 'New Contact Form Submission',
         body: `Email: ${formData.email} \n\nPhone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,

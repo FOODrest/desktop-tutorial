@@ -1,13 +1,21 @@
-const express = require('express');
-const cors = require('cors');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const app = express();
-const port = 3000;
+import express from "express"
+import cors from "cors"
+import nodemailer from "nodemailer"
+import bodyParser from "body-parser"
+import path from "path"
+import dotenv from "dotenv"
 
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+const __dirname = path.resolve();
+
+app.use(express.json()); // allows us to parse incoming requests:req.body
 // Middleware
 app.use(cors({
-  origin: '*', // Be more specific in production
+  origin: process.env.NODE_ENV === 'production' ? 'https://yourproductiondomain.com' : 'http://localhost:5000',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -17,12 +25,12 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 
 // Create a transporter using SMTP
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: process.env.SMTP_HOST,
   port: 465,
   secure: true,
   auth: {
-    user: 'huggingtails.1@gmail.com',
-    pass: 'opka wiwm ogyf yhyx'
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   }
 });
 
@@ -36,7 +44,7 @@ transporter.verify(function(error, success) {
 });
 
 // Email sending endpoint
-app.post('/send-email', async (req, res) => {
+app.post('/api/send-email', async (req, res) => {
   console.log('Received request to send email');
   const { to, subject, body, attachments } = req.body;
  
@@ -79,7 +87,15 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/freelance/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "freelance", "dist", "index.html"));
+  });
+}
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port: ${PORT}`);
 });

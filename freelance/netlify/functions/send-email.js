@@ -22,15 +22,15 @@ exports.handler = async (event) => {
     }
 
     // Create SMTP transporter (Gmail example)
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT || 465),
-      secure: String(process.env.SMTP_SECURE || "true") === "true",
-      auth: {
-        user: process.env.SMTP_USER, // your Gmail address
-        pass: process.env.SMTP_PASS, // your Gmail App Password
-      },
-    });
+        const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: process.env.SMTP_SECURE === 'true',
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+        });
 
     // Always send to your own inbox (don’t trust client “to”)
     const mailOptions = {

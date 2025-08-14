@@ -26,8 +26,8 @@ const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
     setStatus('Sending...');
   
     try {
-      console.log('Sending request to:', `${API_URL}/send-email`);
-      const response = await axios.post(`${API_URL}/send-email`, {
+      console.log('Sending request to:', `/.netlify/functions/send-email`);
+      const response = await axios.post(`/.netlify/functions/send-email`, {
         to: formData.email,
         subject: 'New Contact Form Submission',
         body: `Phone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,

@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useLanguage } from '../../LanguageContext';
 
 const Contact = () => {
-  const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api";
+  const API_URL = import.meta.env.MODE === "development"
+  ? "http://localhost:5000/api"
+  : "https://huggingtails.org/api";
   const { translate } = useLanguage();
   const [formData, setFormData] = useState({
     email: '',

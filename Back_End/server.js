@@ -15,7 +15,7 @@ const __dirname = path.resolve();
 app.use(express.json()); // allows us to parse incoming requests:req.body
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://yourproductiondomain.com' : 'http://localhost:5000',
+  origin: process.env.NODE_ENV === 'production' ? 'https://huggingtails.org' : 'http://localhost:5000',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -49,7 +49,7 @@ app.post('/api/send-email', async (req, res) => {
   const { to, subject, body, attachments } = req.body;
  
   const mailOptions = {
-    from: process.env.EMAIL_USER, // Use environment variable
+    from: process.env.EMAIL_FROM, // Use environment variable
     to,
     subject,
     text: body,

@@ -26,7 +26,7 @@ const Home = () => {
     try {
       console.log('sende')
       const response = await axios.post(`${API_URL}/send-email`, {
-        to: 'ahmedcherkaouisellami@gmail.com',
+        to: 'saadrajab110@gmail.com',
         subject: 'New Contact Form Submission',
         body: `Email: ${formData.email} \n\nPhone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,
       });

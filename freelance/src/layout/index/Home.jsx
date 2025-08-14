@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from 'axios';
 import { useLanguage } from '../../LanguageContext';
 const Home = () => {
-  const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api" : "/api";
+const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
+
   const {  translate} = useLanguage(); 
   const [formData, setFormData] = useState({
     email: '',

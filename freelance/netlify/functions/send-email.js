@@ -11,8 +11,9 @@ exports.handler = async (event) => {
   }
 
   try {
+    console.log("Raw event.body:", event.body);
     const { email, phoneNumber, message } = JSON.parse(event.body || "{}");
-
+    console.log("Parsed values:", { email, phoneNumber, message });
     // Basic validation
     if (!email || !phoneNumber || !message) {
       return {

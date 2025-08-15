@@ -28,11 +28,11 @@ const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
     try {
       console.log('Sending request to:', `/.netlify/functions/send-email`);
       const response = await axios.post(`/.netlify/functions/send-email`, {
-        to: formData.email,
-        subject: 'New Contact Form Submission',
-        body: `Phone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,
-      });
-  
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      message: formData.message
+    }); 
+      
       console.log('Response:', response);
       if (response.status === 200) {
         setStatus('Message sent successfully!');

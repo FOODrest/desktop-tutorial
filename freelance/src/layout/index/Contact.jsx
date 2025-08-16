@@ -26,7 +26,7 @@ const Contact = () => {
       const res = await axios.post(
         '/.netlify/functions/send-email',
         {
-          to: 'ahmedcherkaouisellami1@gmail.com',
+          to: 'ahmedcherkaouisellami@gmail.com',
           subject: 'New Contact Form Submission',
           body: `Email: ${formData.email}\n\nPhone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`
         },

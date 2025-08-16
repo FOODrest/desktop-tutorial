@@ -31,7 +31,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const to = "ahmedcherkaouisellami1@gmail.com";
+    const to = "ahmedcherkaouisellami@gmail.com";
 
     const subject =
       (hasDirect && body.subject) || "New Contact Form Submission";

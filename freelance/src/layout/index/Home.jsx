@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from 'axios';
 import { useLanguage } from '../../LanguageContext';
-const Home = () => {
-const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
 
-  const {  translate} = useLanguage(); 
+const Home = () => {
+  const { translate } = useLanguage();
+
   const [formData, setFormData] = useState({
     email: '',
     phoneNumber: '',
@@ -23,15 +23,18 @@ const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
-  
+
     try {
-      console.log('sende')
-      const response = await axios.post(`${API_URL}/send-email`, {
-        to: 'saadrajab110@gmail.com',
-        subject: 'New Contact Form Submission',
-        body: `Email: ${formData.email} \n\nPhone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`,
-      });
-  
+      const response = await axios.post(
+        '/.netlify/functions/send-email',
+        {
+          to: 'saadrajab110@gmail.com',
+          subject: 'New Contact Form Submission',
+          body: `Email: ${formData.email}\n\nPhone Number: ${formData.phoneNumber}\n\nMessage: ${formData.message}`
+        },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+
       if (response.status === 200) {
         setStatus("Message sent successfully! we'll contact you in 48h at max.");
         setFormData({ email: '', phoneNumber: '', message: '' });
@@ -43,6 +46,7 @@ const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
       setStatus(error.response?.data?.message || 'An error occurred. Please try again later.');
     }
   };
+
   const [imageGalleryOpened, setImageGalleryOpened] = useState(false);
   const [imageGalleryActiveUrl, setImageGalleryActiveUrl] = useState(null);
   const [imageGalleryImageIndex, setImageGalleryImageIndex] = useState(null);
@@ -385,57 +389,62 @@ const API_URL = import.meta.env.MODE === "development" ? "/api" : "/api";
 
 
       
-        <section id='contact' className="bg-white dark:bg-gray-900">
-            {/*  Contact */}
-            <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-                {translate('contact')}</h2>
-                <form onSubmit={handleSubmit} className="space-y-8">
-                <div>
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-                    <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="Enter Email....."
-                    required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="phoneNumber" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    {translate('Phone')}</label>
-                    <input
-                    type="tel"
-                    id="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                    placeholder="+212 ..."
-                    required
-                    />
-                </div>
-                <div className="sm:col-span-2">
-                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                    {translate('Yourmessage')}</label>
-                    <textarea
-                    id="message"
-                    rows="6"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Leave a comment..."
-                    required
-                    ></textarea>
-                </div>
-                <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                {translate('Sendmessage')}
-                </button>
-                {status && <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">{status}</p>}
-                </form>
+ <section id='contact' className="bg-white dark:bg-gray-900">
+        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+            {translate('contact')}
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div>
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+              <input
+                type="email"
+                id="email"
+                autoComplete="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                placeholder="Enter Email....."
+                required
+              />
             </div>
-            </section>
+            <div>
+              <label htmlFor="phoneNumber" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                {translate('Phone')}
+              </label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                autoComplete="tel"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                placeholder="+212 ..."
+                required
+              />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                {translate('Yourmessage')}
+              </label>
+              <textarea
+                id="message"
+                rows="6"
+                autoComplete="off"
+                value={formData.message}
+                onChange={handleChange}
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                placeholder="Leave a comment..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-700 sm:w-fit hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300">
+              {translate('Sendmessage')}
+            </button>
+            {status && <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">{status}</p>}
+          </form>
+        </div>
+      </section>
     </div>
     
   );

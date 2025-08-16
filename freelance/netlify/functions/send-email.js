@@ -31,10 +31,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const to =
-      (hasDirect && body.to) ||
-      process.env.EMAIL_TO ||
-      process.env.SMTP_USER;
+    const to = "ahmedcherkaouisellami1@gmail.com";
 
     const subject =
       (hasDirect && body.subject) || "New Contact Form Submission";
